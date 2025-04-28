@@ -6,8 +6,9 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import Link from "next/link"
+import { Checkbox } from "@/components/ui/checkbox"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 export function LoginForm() {
   const [email, setEmail] = useState("")
@@ -19,8 +20,16 @@ export function LoginForm() {
     e.preventDefault()
     setIsLoading(true)
 
-    // Simulate authentication
+    // Simulate API call
     setTimeout(() => {
+      // Store user data in localStorage
+      const userData = {
+        name: "Ahmad Abdullah",
+        email: email,
+        avatar: "/images/user-avatar.png",
+      }
+      localStorage.setItem("user", JSON.stringify(userData))
+
       setIsLoading(false)
       router.push("/dashboard")
     }, 1500)
@@ -29,21 +38,25 @@ export function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email" className="text-gray-700">
+          Email
+        </Label>
         <Input
           id="email"
           type="email"
-          placeholder="your@email.com"
+          placeholder="your.email@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="bg-black/50 border-white/10 text-white"
+          className="border-gray-300"
         />
       </div>
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <Label htmlFor="password">Password</Label>
-          <Link href="#" className="text-xs text-gray-400 hover:text-white">
+          <Label htmlFor="password" className="text-gray-700">
+            Password
+          </Label>
+          <Link href="#" className="text-sm text-blue-600 hover:text-blue-800">
             Forgot password?
           </Link>
         </div>
@@ -54,15 +67,21 @@ export function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="bg-black/50 border-white/10 text-white"
+          className="border-gray-300"
         />
       </div>
-      <Button type="submit" className="w-full bg-white text-black hover:bg-gray-100" disabled={isLoading}>
+      <div className="flex items-center space-x-2">
+        <Checkbox id="remember" />
+        <Label htmlFor="remember" className="text-sm text-gray-600">
+          Remember me
+        </Label>
+      </div>
+      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={isLoading}>
         {isLoading ? "Logging in..." : "Login"}
       </Button>
-      <div className="text-center text-sm text-gray-400">
-        Don&apos;t have an account?{" "}
-        <Link href="/signup" className="text-white hover:underline">
+      <div className="text-center text-sm text-gray-600">
+        Don't have an account?{" "}
+        <Link href="/signup" className="text-blue-600 hover:text-blue-800">
           Sign up
         </Link>
       </div>

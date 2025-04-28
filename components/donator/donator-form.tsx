@@ -35,17 +35,16 @@ export function DonatorForm() {
   if (isSubmitted) {
     return (
       <div className="text-center py-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/20 mb-4">
-          <CheckCircle className="h-8 w-8 text-green-500" />
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+          <CheckCircle className="h-8 w-8 text-green-600" />
         </div>
-        <h3 className="text-xl font-bold mb-2">Thank You!</h3>
-        <p className="text-gray-400 mb-6">
+        <h3 className="text-xl font-bold mb-2 text-gray-900">Thank You!</h3>
+        <p className="text-gray-600 mb-6">
           Your application to become a donator has been submitted successfully. Our team will contact you shortly to
           discuss the next steps.
         </p>
         <Button
           variant="outline"
-          className="border-white/10"
           onClick={() => {
             setIsSubmitted(false)
             setName("")
@@ -67,55 +66,31 @@ export function DonatorForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="name">Full Name</Label>
-        <Input
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="bg-black/50 border-white/10"
-        />
+        <Input id="name" value={name} onChange={(e) => setName(e.target.value)} required />
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="bg-black/50 border-white/10"
-        />
+        <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="phone">Phone Number</Label>
-        <Input
-          id="phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-          className="bg-black/50 border-white/10"
-        />
+        <Input id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required />
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="organization">Organization (if applicable)</Label>
-        <Input
-          id="organization"
-          value={organization}
-          onChange={(e) => setOrganization(e.target.value)}
-          className="bg-black/50 border-white/10"
-        />
+        <Input id="organization" value={organization} onChange={(e) => setOrganization(e.target.value)} />
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="donationType">Donation Type</Label>
         <Select value={donationType} onValueChange={setDonationType} required>
-          <SelectTrigger className="bg-black/50 border-white/10">
+          <SelectTrigger>
             <SelectValue placeholder="Select donation type" />
           </SelectTrigger>
-          <SelectContent className="bg-black/90 text-white border-white/10">
+          <SelectContent>
             <SelectItem value="monetary">Monetary</SelectItem>
             <SelectItem value="goods">Goods & Supplies</SelectItem>
             <SelectItem value="services">Professional Services</SelectItem>
@@ -127,13 +102,7 @@ export function DonatorForm() {
       {donationType === "monetary" && (
         <div className="space-y-2">
           <Label htmlFor="amount">Estimated Donation Amount (RM)</Label>
-          <Input
-            id="amount"
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            className="bg-black/50 border-white/10"
-          />
+          <Input id="amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
         </div>
       )}
 
@@ -143,12 +112,12 @@ export function DonatorForm() {
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="bg-black/50 border-white/10 min-h-[100px]"
+          className="min-h-[100px]"
           placeholder="Tell us more about how you'd like to contribute..."
         />
       </div>
 
-      <Button type="submit" className="w-full bg-white text-black hover:bg-gray-100" disabled={isLoading}>
+      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={isLoading}>
         {isLoading ? "Submitting..." : "Submit Application"}
       </Button>
     </form>
