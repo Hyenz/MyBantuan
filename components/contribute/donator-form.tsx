@@ -119,10 +119,10 @@ export function DonatorForm() {
         <div className="space-y-2">
           <Label htmlFor="donationType">Donation Type</Label>
           <Select value={formData.donationType} onValueChange={(value) => handleSelectChange("donationType", value)}>
-            <SelectTrigger id="donationType">
+            <SelectTrigger id="donationType" className="bg-white border-gray-300">
               <SelectValue placeholder="Select donation type" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               <SelectItem value="food">Food Items</SelectItem>
               <SelectItem value="clothing">Clothing</SelectItem>
               <SelectItem value="household">Household Items</SelectItem>
@@ -182,7 +182,11 @@ export function DonatorForm() {
         />
       </div>
 
-      <Button type="submit" className="w-full md:w-auto bg-blue-600 hover:bg-blue-700" disabled={isSubmitting}>
+      <Button
+        type="submit"
+        className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? "Submitting..." : "Submit Donation"}
       </Button>
     </form>

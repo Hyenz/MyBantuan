@@ -153,10 +153,10 @@ export function AidProviderForm() {
             value={formData.accreditationStatus}
             onValueChange={(value) => handleSelectChange("accreditationStatus", value)}
           >
-            <SelectTrigger id="accreditationStatus">
+            <SelectTrigger id="accreditationStatus" className="bg-white border-gray-300">
               <SelectValue placeholder="Select accreditation status" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               <SelectItem value="accredited">Accredited</SelectItem>
               <SelectItem value="pending">Pending Accreditation</SelectItem>
               <SelectItem value="inProcess">In Process</SelectItem>
@@ -168,10 +168,10 @@ export function AidProviderForm() {
         <div className="space-y-2">
           <Label htmlFor="programType">Program Type</Label>
           <Select value={formData.programType} onValueChange={(value) => handleSelectChange("programType", value)}>
-            <SelectTrigger id="programType">
+            <SelectTrigger id="programType" className="bg-white border-gray-300">
               <SelectValue placeholder="Select program type" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               <SelectItem value="education">Education</SelectItem>
               <SelectItem value="healthcare">Healthcare</SelectItem>
               <SelectItem value="food">Food Security</SelectItem>
@@ -220,7 +220,11 @@ export function AidProviderForm() {
         />
       </div>
 
-      <Button type="submit" className="w-full md:w-auto bg-blue-600 hover:bg-blue-700" disabled={isSubmitting}>
+      <Button
+        type="submit"
+        className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? "Submitting..." : "Submit Application"}
       </Button>
     </form>

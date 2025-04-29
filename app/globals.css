@@ -21,3 +21,17 @@
   background-size: 24px 24px;
   opacity: 0.1;
 }
+
+@layer components {
+  .select-trigger {
+    @apply bg-white border-gray-300;
+  }
+
+  .select-content {
+    @apply bg-white border border-gray-300;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+  }
+}
