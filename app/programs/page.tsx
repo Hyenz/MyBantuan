@@ -36,7 +36,7 @@ export default function ProgramsPage() {
       id: 1,
       name: "Bantuan Keluarga Malaysia (BKM)",
       category: "Financial",
-      imageUrl: "/placeholder.svg?height=200&width=400",
+      imageUrl: "/images/bkm.png",
       description:
         "Financial assistance for eligible Malaysian families with household income below RM5,000 per month. This program aims to alleviate the financial burden of low and middle-income households.",
       shortDescription: "Financial assistance for eligible Malaysian families",
@@ -50,7 +50,7 @@ export default function ProgramsPage() {
       id: 2,
       name: "Bantuan IPT",
       category: "Education",
-      imageUrl: "/placeholder.svg?height=200&width=400",
+      imageUrl: "/images/bantuan-ipt.png",
       description:
         "Financial assistance for higher education students at recognized institutions. This program supports students in pursuing their tertiary education by providing financial aid.",
       shortDescription: "Bantuan kewangan untuk pelajar IPT",
@@ -64,7 +64,7 @@ export default function ProgramsPage() {
       id: 3,
       name: "BANTUAN eKasih 2025",
       category: "Welfare",
-      imageUrl: "/placeholder.svg?height=200&width=400",
+      imageUrl: "/images/ekasih.png",
       description:
         "Registration for poverty database and assistance programs for households with income below poverty line. This program helps identify and support families in need.",
       shortDescription: "Data kemiskinan nasional untuk penyaluran bantuan",
@@ -78,7 +78,7 @@ export default function ProgramsPage() {
       id: 4,
       name: "Bantuan Zakat Khas",
       category: "Zakat",
-      imageUrl: "/placeholder.svg?height=200&width=400",
+      imageUrl: "/images/zakat-maiwp.png",
       description:
         "Zakat distribution for eligible recipients who fall under asnaf categories. This religious aid program supports those in need according to Islamic principles.",
       shortDescription: "Zakat distribution for eligible recipients",
@@ -102,7 +102,7 @@ export default function ProgramsPage() {
             id: program.id,
             name: program.name,
             category: program.category,
-            imageUrl: "/placeholder.svg?height=200&width=400",
+            imageUrl: getImageForCategory(program.category),
             description: program.description,
             shortDescription: program.description.substring(0, 60) + "...",
             matchScore: Math.floor(Math.random() * 30) + 70, // Random score between 70-100
@@ -122,6 +122,22 @@ export default function ProgramsPage() {
       }
     }
   }, [])
+
+  // Helper function to get appropriate image based on category
+  const getImageForCategory = (category: string) => {
+    switch (category) {
+      case "Financial Aid":
+        return "/images/bkm.png"
+      case "Education":
+        return "/images/bantuan-ipt.png"
+      case "Poverty Alleviation":
+        return "/images/ekasih.png"
+      case "Religious Aid":
+        return "/images/zakat-maiwp.png"
+      default:
+        return "/placeholder.svg?height=200&width=400"
+    }
+  }
 
   const categories = ["All", "Financial", "Education", "Welfare", "Zakat"]
 

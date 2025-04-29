@@ -10,6 +10,7 @@ import { CheckCircle, Filter, Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function AidMatchingPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -24,6 +25,7 @@ export default function AidMatchingPage() {
       matchScore: 95,
       deadline: "May 15, 2025",
       description: "Financial assistance for students pursuing higher education",
+      imageUrl: "/images/bantuan-ipt.png",
     },
     {
       id: 2,
@@ -32,6 +34,7 @@ export default function AidMatchingPage() {
       matchScore: 92,
       deadline: "May 30, 2025",
       description: "Support for housing expenses and rent assistance",
+      imageUrl: "/placeholder.svg?height=200&width=400",
     },
     {
       id: 3,
@@ -40,6 +43,7 @@ export default function AidMatchingPage() {
       matchScore: 88,
       deadline: "June 10, 2025",
       description: "Financial aid for medical expenses and treatments",
+      imageUrl: "/placeholder.svg?height=200&width=400",
     },
     {
       id: 4,
@@ -48,6 +52,7 @@ export default function AidMatchingPage() {
       matchScore: 75,
       deadline: "June 20, 2025",
       description: "Funding for small business owners and entrepreneurs",
+      imageUrl: "/placeholder.svg?height=200&width=400",
     },
   ]
 
@@ -60,6 +65,7 @@ export default function AidMatchingPage() {
       matchScore: 65,
       deadline: "July 5, 2025",
       description: "Support for families facing food insecurity",
+      imageUrl: "/images/bkm.png",
     },
     {
       id: 6,
@@ -68,6 +74,25 @@ export default function AidMatchingPage() {
       matchScore: 60,
       deadline: "July 15, 2025",
       description: "Free training programs for digital and technical skills",
+      imageUrl: "/images/bantuan-ipt.png",
+    },
+    {
+      id: 7,
+      name: "BANTUAN eKasih 2025",
+      category: "Welfare",
+      matchScore: 85,
+      deadline: "June 15, 2025",
+      description: "Registration for poverty database and assistance programs",
+      imageUrl: "/images/ekasih.png",
+    },
+    {
+      id: 8,
+      name: "Bantuan Zakat Khas",
+      category: "Religious Aid",
+      matchScore: 78,
+      deadline: "June 30, 2025",
+      description: "Zakat distribution for eligible recipients",
+      imageUrl: "/images/zakat-maiwp.png",
     },
   ]
 
@@ -269,6 +294,14 @@ export default function AidMatchingPage() {
                             <p className="text-gray-900">{program.deadline}</p>
                           </div>
                         </div>
+                        <div className="mt-4 relative w-full h-32 rounded-md overflow-hidden">
+                          <Image
+                            src={program.imageUrl || "/placeholder.svg"}
+                            alt={program.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
                       </CardContent>
                       <div className="px-6 pb-6">
                         <Button className="w-full bg-blue-600 hover:bg-blue-700">Apply Now</Button>
@@ -317,6 +350,14 @@ export default function AidMatchingPage() {
                             <p className="text-gray-500">Deadline</p>
                             <p className="text-gray-900">{program.deadline}</p>
                           </div>
+                        </div>
+                        <div className="mt-4 relative w-full h-32 rounded-md overflow-hidden">
+                          <Image
+                            src={program.imageUrl || "/placeholder.svg"}
+                            alt={program.name}
+                            fill
+                            className="object-cover"
+                          />
                         </div>
                       </CardContent>
                       <div className="px-6 pb-6">

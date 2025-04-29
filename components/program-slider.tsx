@@ -19,25 +19,25 @@ export function ProgramSlider() {
     {
       id: 1,
       title: "Bantuan Keluarga Malaysia 2025",
-      imageUrl: "/placeholder.svg?height=400&width=800",
+      imageUrl: "/images/bkm.png",
       description: "Latest Government Assistance",
     },
     {
       id: 2,
       title: "Bantuan IPT",
-      imageUrl: "/placeholder.svg?height=400&width=800",
+      imageUrl: "/images/bantuan-ipt.png",
       description: "Education Assistance for Students",
     },
     {
       id: 3,
       title: "BANTUAN eKasih 2025",
-      imageUrl: "/placeholder.svg?height=400&width=800",
+      imageUrl: "/images/ekasih.png",
       description: "Financial Support for Eligible Families",
     },
     {
       id: 4,
       title: "Bantuan Zakat Khas",
-      imageUrl: "/placeholder.svg?height=400&width=800",
+      imageUrl: "/images/zakat-maiwp.png",
       description: "Religious Aid for Eligible Recipients",
     },
   ])
@@ -77,7 +77,7 @@ export function ProgramSlider() {
               src={program.imageUrl || "/placeholder.svg"}
               alt={program.title}
               fill
-              className="object-cover brightness-75"
+              className="object-cover"
               priority={index === 0}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
