@@ -52,17 +52,14 @@ export function Header() {
           </Link>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/program-management" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
-            Program
-          </Link>
-          <Link href="/aid-matching" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
-            Matching & Recommendations
+          <Link href="/programs" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
+            Programs & Assistance
           </Link>
           <Link href="/announcements" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
             Announcements
           </Link>
-          <Link href="/become-donator" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
-            Become A Donator
+          <Link href="/contribute" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
+            Contribute
           </Link>
         </nav>
 

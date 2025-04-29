@@ -8,8 +8,9 @@ import { AnnouncementsList } from "@/components/admin/announcements-list"
 import { ProgramsList } from "@/components/admin/programs-list"
 import { UsersList } from "@/components/admin/users-list"
 import { DonationsList } from "@/components/admin/donations-list"
+import { ContributionsList } from "@/components/admin/contributions-list"
 
-type ActiveView = "overview" | "applicants" | "programs" | "users" | "donations" | "announcements"
+type ActiveView = "overview" | "applicants" | "programs" | "users" | "donations" | "announcements" | "contributions"
 
 type AdminDashboardProps = {}
 
@@ -29,6 +30,7 @@ export function AdminDashboard() {
             <TabsTrigger value="applicants">Applicants</TabsTrigger>
             <TabsTrigger value="programs">Programs</TabsTrigger>
             <TabsTrigger value="announcements">Announcements</TabsTrigger>
+            <TabsTrigger value="contributions">Contributions</TabsTrigger>
             <TabsTrigger value="users">Users</TabsTrigger>
             <TabsTrigger value="donations">Donations</TabsTrigger>
           </TabsList>
@@ -43,6 +45,9 @@ export function AdminDashboard() {
           </TabsContent>
           <TabsContent value="announcements" className="space-y-4">
             <AnnouncementsList />
+          </TabsContent>
+          <TabsContent value="contributions" className="space-y-4">
+            <ContributionsList />
           </TabsContent>
           <TabsContent value="users" className="space-y-4">
             <UsersList />
