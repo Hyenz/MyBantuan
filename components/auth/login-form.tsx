@@ -48,7 +48,7 @@ export function LoginForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="border-gray-300"
+          className="border-gray-300 bg-white"
         />
       </div>
       <div className="space-y-2">
@@ -67,7 +67,7 @@ export function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="border-gray-300"
+          className="border-gray-300 bg-white"
         />
       </div>
       <div className="flex items-center space-x-2">
@@ -76,7 +76,7 @@ export function LoginForm() {
           Remember me
         </Label>
       </div>
-      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={isLoading}>
+      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white" disabled={isLoading}>
         {isLoading ? "Logging in..." : "Login"}
       </Button>
       <div className="text-center text-sm text-gray-600">

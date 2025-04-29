@@ -31,7 +31,9 @@ export function SignupForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email" className="text-gray-700">
+          Email
+        </Label>
         <Input
           id="email"
           type="email"
@@ -39,11 +41,13 @@ export function SignupForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="bg-black/50 border-white/10 text-white"
+          className="border-gray-300 bg-white"
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="fullName">Full Name</Label>
+        <Label htmlFor="fullName" className="text-gray-700">
+          Full Name
+        </Label>
         <Input
           id="fullName"
           type="text"
@@ -51,11 +55,13 @@ export function SignupForm() {
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           required
-          className="bg-black/50 border-white/10 text-white"
+          className="border-gray-300 bg-white"
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="password">Password</Label>
+        <Label htmlFor="password" className="text-gray-700">
+          Password
+        </Label>
         <Input
           id="password"
           type="password"
@@ -63,11 +69,13 @@ export function SignupForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="bg-black/50 border-white/10 text-white"
+          className="border-gray-300 bg-white"
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="age">Age</Label>
+        <Label htmlFor="age" className="text-gray-700">
+          Age
+        </Label>
         <Input
           id="age"
           type="number"
@@ -76,15 +84,15 @@ export function SignupForm() {
           value={age}
           onChange={(e) => setAge(e.target.value)}
           required
-          className="bg-black/50 border-white/10 text-white"
+          className="border-gray-300 bg-white"
         />
       </div>
-      <Button type="submit" className="w-full bg-white text-black hover:bg-gray-100" disabled={isLoading}>
+      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white" disabled={isLoading}>
         {isLoading ? "Creating account..." : "Sign Up"}
       </Button>
-      <div className="text-center text-sm text-gray-400">
+      <div className="text-center text-sm text-gray-600">
         Already have an account?{" "}
-        <Link href="/login" className="text-white hover:underline">
+        <Link href="/login" className="text-blue-600 hover:text-blue-800">
           Login
         </Link>
       </div>

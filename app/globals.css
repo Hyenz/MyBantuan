@@ -34,4 +34,17 @@
   .btn-primary {
     @apply bg-blue-600 hover:bg-blue-700 text-white;
   }
+
+  /* Form styling */
+  .form-input {
+    @apply border-gray-300 bg-white;
+  }
+
+  .form-label {
+    @apply text-gray-700;
+  }
+
+  .form-button {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+  }
 }

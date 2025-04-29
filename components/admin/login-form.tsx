@@ -58,7 +58,9 @@ export function AdminLoginForm() {
       )}
 
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email" className="text-gray-700">
+          Email
+        </Label>
         <Input
           id="email"
           type="email"
@@ -66,11 +68,14 @@ export function AdminLoginForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className="border-gray-300 bg-white"
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="password">Password</Label>
+        <Label htmlFor="password" className="text-gray-700">
+          Password
+        </Label>
         <Input
           id="password"
           type="password"
@@ -78,10 +83,11 @@ export function AdminLoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className="border-gray-300 bg-white"
         />
       </div>
 
-      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={isLoading}>
+      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white" disabled={isLoading}>
         {isLoading ? "Signing in..." : "Sign in"}
       </Button>
     </form>

@@ -83,7 +83,9 @@ export function AidProviderForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="orgName">Organization Name</Label>
+          <Label htmlFor="orgName" className="text-gray-700">
+            Organization Name
+          </Label>
           <Input
             id="orgName"
             name="orgName"
@@ -91,11 +93,14 @@ export function AidProviderForm() {
             value={formData.orgName}
             onChange={handleChange}
             required
+            className="border-gray-300 bg-white"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="licenseNumber">License Number</Label>
+          <Label htmlFor="licenseNumber" className="text-gray-700">
+            License Number
+          </Label>
           <Input
             id="licenseNumber"
             name="licenseNumber"
@@ -103,13 +108,16 @@ export function AidProviderForm() {
             value={formData.licenseNumber}
             onChange={handleChange}
             required
+            className="border-gray-300 bg-white"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="contactNumber">Contact Number</Label>
+          <Label htmlFor="contactNumber" className="text-gray-700">
+            Contact Number
+          </Label>
           <Input
             id="contactNumber"
             name="contactNumber"
@@ -117,11 +125,14 @@ export function AidProviderForm() {
             value={formData.contactNumber}
             onChange={handleChange}
             required
+            className="border-gray-300 bg-white"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email">Email Address</Label>
+          <Label htmlFor="email" className="text-gray-700">
+            Email Address
+          </Label>
           <Input
             id="email"
             name="email"
@@ -130,12 +141,15 @@ export function AidProviderForm() {
             value={formData.email}
             onChange={handleChange}
             required
+            className="border-gray-300 bg-white"
           />
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="address">Organization Address</Label>
+        <Label htmlFor="address" className="text-gray-700">
+          Organization Address
+        </Label>
         <Textarea
           id="address"
           name="address"
@@ -143,12 +157,15 @@ export function AidProviderForm() {
           value={formData.address}
           onChange={handleChange}
           required
+          className="border-gray-300 bg-white"
         />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="accreditationStatus">Accreditation Status</Label>
+          <Label htmlFor="accreditationStatus" className="text-gray-700">
+            Accreditation Status
+          </Label>
           <Select
             value={formData.accreditationStatus}
             onValueChange={(value) => handleSelectChange("accreditationStatus", value)}
@@ -156,7 +173,7 @@ export function AidProviderForm() {
             <SelectTrigger id="accreditationStatus" className="bg-white border-gray-300">
               <SelectValue placeholder="Select accreditation status" />
             </SelectTrigger>
-            <SelectContent className="bg-white">
+            <SelectContent className="bg-white border border-gray-300">
               <SelectItem value="accredited">Accredited</SelectItem>
               <SelectItem value="pending">Pending Accreditation</SelectItem>
               <SelectItem value="inProcess">In Process</SelectItem>
@@ -166,12 +183,14 @@ export function AidProviderForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="programType">Program Type</Label>
+          <Label htmlFor="programType" className="text-gray-700">
+            Program Type
+          </Label>
           <Select value={formData.programType} onValueChange={(value) => handleSelectChange("programType", value)}>
             <SelectTrigger id="programType" className="bg-white border-gray-300">
               <SelectValue placeholder="Select program type" />
             </SelectTrigger>
-            <SelectContent className="bg-white">
+            <SelectContent className="bg-white border border-gray-300">
               <SelectItem value="education">Education</SelectItem>
               <SelectItem value="healthcare">Healthcare</SelectItem>
               <SelectItem value="food">Food Security</SelectItem>
@@ -184,7 +203,9 @@ export function AidProviderForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="totalFundsAllocated">Total Funds Allocated (MYR)</Label>
+        <Label htmlFor="totalFundsAllocated" className="text-gray-700">
+          Total Funds Allocated (MYR)
+        </Label>
         <Input
           id="totalFundsAllocated"
           name="totalFundsAllocated"
@@ -193,11 +214,14 @@ export function AidProviderForm() {
           value={formData.totalFundsAllocated}
           onChange={handleChange}
           required
+          className="border-gray-300 bg-white"
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="organizationDescription">Organization Description</Label>
+        <Label htmlFor="organizationDescription" className="text-gray-700">
+          Organization Description
+        </Label>
         <Textarea
           id="organizationDescription"
           name="organizationDescription"
@@ -205,11 +229,14 @@ export function AidProviderForm() {
           value={formData.organizationDescription}
           onChange={handleChange}
           required
+          className="border-gray-300 bg-white"
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="programDescription">Program Description</Label>
+        <Label htmlFor="programDescription" className="text-gray-700">
+          Program Description
+        </Label>
         <Textarea
           id="programDescription"
           name="programDescription"
@@ -217,6 +244,7 @@ export function AidProviderForm() {
           value={formData.programDescription}
           onChange={handleChange}
           required
+          className="border-gray-300 bg-white"
         />
       </div>
 

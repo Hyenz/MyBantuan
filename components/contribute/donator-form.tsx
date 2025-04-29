@@ -78,7 +78,9 @@ export function DonatorForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="name">Full Name</Label>
+          <Label htmlFor="name" className="text-gray-700">
+            Full Name
+          </Label>
           <Input
             id="name"
             name="name"
@@ -86,11 +88,14 @@ export function DonatorForm() {
             value={formData.name}
             onChange={handleChange}
             required
+            className="border-gray-300 bg-white"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email">Email Address</Label>
+          <Label htmlFor="email" className="text-gray-700">
+            Email Address
+          </Label>
           <Input
             id="email"
             name="email"
@@ -99,13 +104,16 @@ export function DonatorForm() {
             value={formData.email}
             onChange={handleChange}
             required
+            className="border-gray-300 bg-white"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="phone">Phone Number</Label>
+          <Label htmlFor="phone" className="text-gray-700">
+            Phone Number
+          </Label>
           <Input
             id="phone"
             name="phone"
@@ -113,16 +121,19 @@ export function DonatorForm() {
             value={formData.phone}
             onChange={handleChange}
             required
+            className="border-gray-300 bg-white"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="donationType">Donation Type</Label>
+          <Label htmlFor="donationType" className="text-gray-700">
+            Donation Type
+          </Label>
           <Select value={formData.donationType} onValueChange={(value) => handleSelectChange("donationType", value)}>
             <SelectTrigger id="donationType" className="bg-white border-gray-300">
               <SelectValue placeholder="Select donation type" />
             </SelectTrigger>
-            <SelectContent className="bg-white">
+            <SelectContent className="bg-white border border-gray-300">
               <SelectItem value="food">Food Items</SelectItem>
               <SelectItem value="clothing">Clothing</SelectItem>
               <SelectItem value="household">Household Items</SelectItem>
@@ -135,7 +146,9 @@ export function DonatorForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="itemDescription">Item Description</Label>
+          <Label htmlFor="itemDescription" className="text-gray-700">
+            Item Description
+          </Label>
           <Input
             id="itemDescription"
             name="itemDescription"
@@ -143,11 +156,14 @@ export function DonatorForm() {
             value={formData.itemDescription}
             onChange={handleChange}
             required
+            className="border-gray-300 bg-white"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="quantity">Quantity</Label>
+          <Label htmlFor="quantity" className="text-gray-700">
+            Quantity
+          </Label>
           <Input
             id="quantity"
             name="quantity"
@@ -155,12 +171,15 @@ export function DonatorForm() {
             value={formData.quantity}
             onChange={handleChange}
             required
+            className="border-gray-300 bg-white"
           />
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="pickupAddress">Pickup Address</Label>
+        <Label htmlFor="pickupAddress" className="text-gray-700">
+          Pickup Address
+        </Label>
         <Textarea
           id="pickupAddress"
           name="pickupAddress"
@@ -168,17 +187,21 @@ export function DonatorForm() {
           value={formData.pickupAddress}
           onChange={handleChange}
           required
+          className="border-gray-300 bg-white"
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="additionalNotes">Additional Notes (Optional)</Label>
+        <Label htmlFor="additionalNotes" className="text-gray-700">
+          Additional Notes (Optional)
+        </Label>
         <Textarea
           id="additionalNotes"
           name="additionalNotes"
           placeholder="Any additional information about your donation"
           value={formData.additionalNotes}
           onChange={handleChange}
+          className="border-gray-300 bg-white"
         />
       </div>
 
